@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos Destacados - Cristopher Valladares">
+    <title>Proyectos | Cristopher Valladares</title>
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="animated-bg"></div>
+
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">💻</div>
+                        <span>CristopherV</span>
+                    </a>
+
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                        <a href="sobre-mi.html" class="nav-link">Sobre Mí</a>
+                        <a href="habilidades.html" class="nav-link">Habilidades</a>
+                        <a href="proyectos.html" class="nav-link">Proyectos</a>
+                        <a href="contacto.html" class="btn-primary">Hablemos</a>
+                    </div>
+
+                    <button class="menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title scroll-reveal">Proyectos Destacados</h1>
+                    <p class="section-subtitle scroll-reveal">
+                        Algunos de mis trabajos más recientes y destacados
+                    </p>
+
+                    <div class="filter-buttons scroll-reveal">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="web">Diseño Web</button>
+                        <button class="filter-btn" data-filter="app">Aplicaciones</button>
+                        <button class="filter-btn" data-filter="ui">UI/UX</button>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card scroll-reveal" data-category="app">
+                            <div class="project-image"
+                                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Conversor de Monedas</h3>
+                                <p class="project-description">
+                                    Conversor de monedas con API de tasas reales, animaciones y sonido.
+                                    Permite convertir entre múltiples divisas con datos actualizados en tiempo real.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">API</span>
+                                    <span class="project-tag">CSS3</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/cristopher281/Cris_js-py" target="_blank"
+                                        class="project-link">
+                                        <i class="fab fa-github"></i> Ver Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card scroll-reveal" data-category="app" style="transition-delay: 0.1s;">
+                            <div class="project-image"
+                                style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Calendario Interactivo</h3>
+                                <p class="project-description">
+                                    Calendario con notas totalmente interactivo que permite a los usuarios crear,
+                                    editar y eliminar eventos con recordatorios y categorías personalizadas.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">LocalStorage</span>
+                                    <span class="project-tag">HTML5</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/cristopher281/interfas-py" target="_blank"
+                                        class="project-link">
+                                        <i class="fab fa-github"></i> Ver Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card scroll-reveal" data-category="web ui" style="transition-delay: 0.2s;">
+                            <div class="project-image"
+                                style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Panel Administrativo</h3>
+                                <p class="project-description">
+                                    Panel administrativo con diseño futurista y animaciones. Incluye gráficos
+                                    interactivos,
+                                    gestión de usuarios y dashboard de métricas en tiempo real.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag">HTML5</span>
+                                    <span class="project-tag">CSS3</span>
+                                    <span class="project-tag">JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://cristopher281.github.io/archibo-html/" target="_blank"
+                                        class="project-link">
+                                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">💻</div>
+                        <span>CristopherV</span>
+                    </a>
+
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">Inicio</a>
+                        <a href="sobre-mi.html" class="footer-link">Sobre Mí</a>
+                        <a href="habilidades.html" class="footer-link">Habilidades</a>
+                        <a href="proyectos.html" class="footer-link">Proyectos</a>
+                        <a href="contacto.html" class="footer-link">Contacto</a>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    &copy; 2025 Cristopher Valladares. Todos los derechos reservados.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
