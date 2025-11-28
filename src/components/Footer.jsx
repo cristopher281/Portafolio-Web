@@ -1,0 +1,66 @@
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+const Footer = () => {
+    const footerLinks = [
+        { path: '/', label: 'Inicio' },
+        { path: '/sobre-mi', label: 'Sobre Mí' },
+        { path: '/habilidades', label: 'Habilidades' },
+        { path: '/proyectos', label: 'Proyectos' },
+        { path: '/ofertas', label: 'Ofertas' },
+        { path: '/contacto', label: 'Contacto' }
+    ]
+
+    return (
+        <footer className="footer">
+            <div className="container">
+                <motion.div
+                    className="footer-content"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <Link to="/" className="logo">
+                        <motion.img
+                            src="/assets/images/logo-icon.jpg"
+                            alt="Logo"
+                            className="logo-icon-img"
+                            whileHover={{ scale: 1.1, rotate: -5 }}
+                            transition={{ type: 'spring', stiffness: 300 }}
+                        />
+                        <span>CristopherV</span>
+                    </Link>
+
+                    <div className="footer-links">
+                        {footerLinks.map((link, index) => (
+                            <motion.div
+                                key={link.path}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.05 }}
+                            >
+                                <Link to={link.path} className="footer-link">
+                                    {link.label}
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    className="copyright"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                >
+                    &copy; 2025 Cristopher Valladares. Todos los derechos reservados.
+                </motion.div>
+            </div>
+        </footer>
+    )
+}
+
+export default Footer

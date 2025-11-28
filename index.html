@@ -2,121 +2,26 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Portafolio digital de Cristopher Valladares - Estudiante de Ingeniería en Sistemas especializado en desarrollo web frontend">
+        content="Portafolio digital de Cristopher Valladares - Estudiante de Ingeniería en Sistemas especializado en desarrollo web frontend" />
     <meta name="keywords"
-        content="desarrollador web, frontend, portafolio, Cristopher Valladares, ingeniería en sistemas">
-    <meta name="author" content="Cristopher Valladares">
+        content="desarrollador web, frontend, portafolio, Cristopher Valladares, ingeniería en sistemas" />
+    <meta name="author" content="Cristopher Valladares" />
     <title>Cristopher Valladares | Desarrollador Web Frontend</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/layout.css">
-    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-    <div class="page-wrapper">
-        <!-- Animated Background -->
-        <div class="animated-bg"></div>
-
-        <!-- Header -->
-        <header class="header">
-            <div class="container">
-                <nav class="nav">
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo-icon.jpg" alt="Logo" class="logo-icon-img">
-                        <span>CristopherV</span>
-                    </a>
-
-                    <div class="nav-links">
-                        <a href="index.html" class="nav-link">Inicio</a>
-                        <a href="sobre-mi.html" class="nav-link">Sobre Mí</a>
-                        <a href="habilidades.html" class="nav-link">Habilidades</a>
-                        <a href="proyectos.html" class="nav-link">Proyectos</a>
-                        <a href="ofertas.html" class="nav-link">Ofertas</a>
-                        <a href="contacto.html" class="btn-primary">Hablemos</a>
-                    </div>
-
-                    <button class="menu-toggle" aria-label="Toggle menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Hero Section -->
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <div class="hero-text scroll-reveal">
-                            <h1>
-                                Hola, soy <span class="highlight">Cristopher Valladares</span>
-                            </h1>
-                            <h2>Desarrollador Web Frontend</h2>
-                            <p>
-                                Estudiante de Ingeniería en Sistemas apasionado por crear experiencias web
-                                modernas, interactivas y funcionales. Especializado en desarrollo frontend
-                                con enfoque en diseño responsive y animaciones creativas.
-                            </p>
-                            <div class="hero-buttons">
-                                <a href="proyectos.html" class="btn-primary">Ver Proyectos</a>
-                                <a href="contacto.html" class="btn-secondary">Contactar</a>
-                            </div>
-                        </div>
-
-                        <div class="hero-image scroll-reveal">
-                            <div class="hero-image-wrapper">
-                                <img src="foto-perfil.jpg" alt="Cristopher Valladares - Desarrollador Web Frontend">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo-icon.jpg" alt="Logo" class="logo-icon-img">
-                        <span>CristopherV</span>
-                    </a>
-
-                    <div class="footer-links">
-                        <a href="index.html" class="footer-link">Inicio</a>
-                        <a href="sobre-mi.html" class="footer-link">Sobre Mí</a>
-                        <a href="habilidades.html" class="footer-link">Habilidades</a>
-                        <a href="proyectos.html" class="footer-link">Proyectos</a>
-                        <a href="ofertas.html" class="footer-link">Ofertas</a>
-                        <a href="contacto.html" class="footer-link">Contacto</a>
-                    </div>
-                </div>
-
-                <div class="copyright">
-                    &copy; 2025 Cristopher Valladares. Todos los derechos reservados.
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
