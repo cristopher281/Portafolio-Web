@@ -29,4 +29,5 @@ dist-ssr
 # Ignore local image exports and centralized image assets
 /Imagen de WhatsApp*.jpg
 /foto-perfil.jpg
+/public/foto-perfil.jpg
 /public/assets/images/
