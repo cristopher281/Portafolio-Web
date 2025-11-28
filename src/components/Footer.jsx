@@ -24,13 +24,16 @@ const Footer = () => {
                     <Link to="/" className="logo">
                         <motion.div
                             style={{
-                                fontSize: '2rem',
                                 display: 'inline-block'
                             }}
-                            whileHover={{ scale: 1.1, rotate: -5 }}
+                            whileHover={{ scale: 1.05, rotate: -3 }}
                             transition={{ type: 'spring', stiffness: 300 }}
                         >
-                            💻
+                            <img
+                                src="/assets/images/logo.jpg"
+                                alt="CristopherV"
+                                style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }}
+                            />
                         </motion.div>
                         <span>CristopherV</span>
                     </Link>
