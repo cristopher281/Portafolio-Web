@@ -27,7 +27,6 @@ dist-ssr
 *.backup.html
 
 # Ignore local image exports and centralized image assets
-/Imagen de WhatsApp*.jpg
-/foto-perfil.jpg
-/public/foto-perfil.jpg
-/public/assets/images/
+ /Imagen de WhatsApp*.jpg
+ # Se incluye foto-perfil y la carpeta public/assets/images en el repo
+ # (quita las reglas antiguas que ignoraban estas imágenes)
