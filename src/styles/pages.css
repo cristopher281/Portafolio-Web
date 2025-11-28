@@ -70,6 +70,15 @@
     filter: blur(40px);
 }
 
+/* Asegura tamaño y posicionamiento del wrapper de la imagen en escritorio */
+.hero-image-wrapper {
+    width: 420px;
+    height: 420px;
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
 .hero-image img {
     width: 100%;
     height: 100%;
