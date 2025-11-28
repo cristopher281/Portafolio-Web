@@ -24,13 +24,16 @@ const Header = () => {
             <div className="container">
                 <nav className="nav">
                     <Link to="/" className="logo" onClick={closeMobileMenu}>
-                        <motion.img
-                            src="/assets/images/logo-icon.jpg"
-                            alt="Logo"
-                            className="logo-icon-img"
+                        <motion.div
+                            style={{
+                                fontSize: '2rem',
+                                display: 'inline-block'
+                            }}
                             whileHover={{ scale: 1.1, rotate: 5 }}
                             transition={{ type: 'spring', stiffness: 300 }}
-                        />
+                        >
+                            💻
+                        </motion.div>
                         <span>CristopherV</span>
                     </Link>
 

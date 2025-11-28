@@ -22,13 +22,16 @@ const Footer = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <Link to="/" className="logo">
-                        <motion.img
-                            src="/assets/images/logo-icon.jpg"
-                            alt="Logo"
-                            className="logo-icon-img"
+                        <motion.div
+                            style={{
+                                fontSize: '2rem',
+                                display: 'inline-block'
+                            }}
                             whileHover={{ scale: 1.1, rotate: -5 }}
                             transition={{ type: 'spring', stiffness: 300 }}
-                        />
+                        >
+                            💻
+                        </motion.div>
                         <span>CristopherV</span>
                     </Link>
 
