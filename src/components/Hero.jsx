@@ -76,7 +76,7 @@ const Hero = () => {
                             transition={{ type: 'spring', stiffness: 300 }}
                         >
                             <motion.img
-                                src="/foto-perfil.jpg"
+                                src="/assets/images/foto-perfil.jpg"
                                 alt="Cristopher Valladares - Desarrollador Web Frontend"
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}

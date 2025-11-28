@@ -54,6 +54,104 @@
 .hero-text h2 {
     font-size: var(--font-size-2xl);
     font-weight: 600;
+
+/* Contact - estilo moderno acorde al diseño provisto */
+.contact-section {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(180deg, rgba(5,8,15,0.02), rgba(5,8,15,0));
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+}
+.contact-info-modern {
+    padding: var(--spacing-3xl);
+    color: var(--text-primary);
+}
+.contact-info-modern h2 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-md);
+}
+.contact-info-modern h2 span {
+    color: var(--primary-cyan);
+}
+.contact-info-modern p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    max-width: 36rem;
+}
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+.contact-detail {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    background: rgba(255,255,255,0.02);
+    padding: var(--spacing-sm);
+    border-radius: 12px;
+}
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(0,255,247,0.08);
+    color: var(--primary-cyan);
+    border-radius: 10px;
+}
+.contact-label {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-right: auto;
+}
+.contact-value {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.contact-form-modern {
+    background: linear-gradient(135deg, rgba(10,10,15,0.6), rgba(10,10,15,0.5));
+    padding: var(--spacing-3xl);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+.contact-form-modern .form-row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+.contact-form-modern input[type="text"],
+.contact-form-modern input[type="email"],
+.contact-form-modern textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+    color: var(--text-primary);
+}
+.contact-form-modern input::placeholder,
+.contact-form-modern textarea::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+.contact-form-modern button.btn-primary {
+    align-self: flex-end;
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-form-modern .form-row { flex-direction: column; }
+}
     color: var(--text-secondary);
     margin-bottom: var(--spacing-md);
 }
