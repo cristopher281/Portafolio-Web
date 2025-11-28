@@ -9,7 +9,9 @@
     left: 0;
     width: 100%;
     z-index: var(--z-fixed);
-    background: rgba(10, 10, 15, 0.8);
+    /* imagen de fondo con overlay oscuro para mantener contraste */
+    background: linear-gradient(rgba(10,10,15,0.75), rgba(10,10,15,0.75)),
+                url('/4564a43e3a0113cb4cffe8fef56b3fc5.jpg') top center / cover no-repeat;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-base);
@@ -125,7 +127,9 @@
 
 /* === FOOTER === */
 .footer {
-    background: rgba(10, 10, 15, 0.95);
+    /* imagen de fondo ubicada al fondo de la página con overlay para contraste */
+    background: linear-gradient(rgba(10,10,15,0.9), rgba(10,10,15,0.9)),
+                url('/4564a43e3a0113cb4cffe8fef56b3fc5.jpg') bottom center / cover no-repeat;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: var(--spacing-xl) 0;
     margin-top: auto;
