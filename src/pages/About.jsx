@@ -133,7 +133,7 @@ const About = () => {
                             viewport={{ once: true }}
                             whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0, 255, 247, 0.2)' }}
                         >
-                            <img src="/assets/images/foto-certificado.jpg" alt="Certificado de aprendizaje" />
+                            <img src="/assets/images/certificate.jpg" alt="Certificado de aprendizaje" />
                             <h3>Certificado de Aprendizaje</h3>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: 0 }}>
                                 Reconocimiento por completar el curso
@@ -148,7 +148,7 @@ const About = () => {
                             transition={{ delay: 0.1 }}
                             whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0, 255, 247, 0.2)' }}
                         >
-                            <img src="/assets/images/certificado-ia.jpg" alt="Curso de Iniciación al Desarrollo con IA" />
+                            <img src="/assets/images/extra.jpg" alt="Curso de Iniciación al Desarrollo con IA" />
                             <h3>Desarrollo con IA</h3>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: 0 }}>
                                 Curso de Iniciación al Desarrollo con IA - BIG school (6 horas)
