@@ -30,7 +30,7 @@ const Footer = () => {
                             transition={{ type: 'spring', stiffness: 300 }}
                         >
                             <img
-                                src="/assets/images/logo.jpg"
+                                src="/assets/images/icon.jpg"
                                 alt="CristopherV"
                                 style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }}
                             />
