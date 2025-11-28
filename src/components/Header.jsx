@@ -25,17 +25,11 @@ const Header = () => {
                 <nav className="nav">
                     <Link to="/" className="logo" onClick={closeMobileMenu}>
                         <motion.div
-                            style={{
-                                display: 'inline-block'
-                            }}
-                            whileHover={{ scale: 1.05, rotate: 3 }}
+                            className="logo-icon"
+                            whileHover={{ scale: 1.08 }}
                             transition={{ type: 'spring', stiffness: 300 }}
                         >
-                            <img
-                                src="/assets/images/icon.jpg"
-                                alt="CristopherV"
-                                style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }}
-                            />
+                            <img src="/assets/images/icon.jpg" alt="CristopherV" />
                         </motion.div>
                         <span>CristopherV</span>
                     </Link>
