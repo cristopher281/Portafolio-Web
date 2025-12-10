@@ -1,0 +1,84 @@
+/* Full page theme chooser styles */
+
+.theme-page {
+  padding: 4rem 0;
+  min-height: calc(100vh - 160px);
+}
+
+.theme-page-inner {
+  background: var(--dark-card);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.theme-page-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.theme-page-header p {
+  margin: 0 0 1rem 0;
+  color: var(--text-secondary);
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--primary-cyan);
+  color: var(--primary-cyan);
+  border-radius: var(--radius-sm);
+}
+
+.theme-page-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .theme-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Make the theme-option look larger on the page */
+.theme-option.large {
+  padding: 1.25rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-preview.large {
+  margin-bottom: 0.75rem;
+}
+
+.theme-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.theme-option.large .preview-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.08);
+}
+
+.theme-option.large.active {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5), var(--shadow-glow-lg);
+  transform: translateY(-4px);
+}

@@ -2,7 +2,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useNavigation } from '../hooks/useNavigation'
 import Logo3D from './Logo3D'
-import ThemeSelector from './ThemeSelector'
 
 const Header = () => {
     const location = useLocation()
@@ -13,7 +12,8 @@ const Header = () => {
         { path: '/sobre-mi', label: 'Sobre Mí' },
         { path: '/habilidades', label: 'Habilidades' },
         { path: '/proyectos', label: 'Proyectos' },
-        { path: '/ofertas', label: 'Ofertas' }
+        { path: '/ofertas', label: 'Ofertas' },
+        { path: '/tema', label: 'Tema' }
     ]
 
     return (
@@ -66,8 +66,7 @@ const Header = () => {
                         </motion.div>
                     </div>
 
-                    {/* Theme Selector */}
-                    <ThemeSelector />
+                    {/* Theme Selector removed: use /tema page instead */}
 
                     <motion.button
                         className={`menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}

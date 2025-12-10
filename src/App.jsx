@@ -9,6 +9,7 @@ import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Offers from './pages/Offers'
 import Contact from './pages/Contact'
+import Theme from './pages/Theme'
 
 function App() {
     const location = useLocation()
@@ -27,6 +28,7 @@ function App() {
                         <Route path="/proyectos" element={<Projects />} />
                         <Route path="/ofertas" element={<Offers />} />
                         <Route path="/contacto" element={<Contact />} />
+                        <Route path="/tema" element={<Theme />} />
                     </Routes>
                 </AnimatePresence>
             </main>
