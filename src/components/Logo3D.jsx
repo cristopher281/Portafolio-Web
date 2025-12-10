@@ -8,17 +8,15 @@ const Logo3D = () => {
     useEffect(() => {
         const sphere = sphereRef.current
         if (!sphere) return
-
-        let rotationX = 0
         let rotationY = 0
         let animationId
 
         const animate = () => {
-            rotationX += 0.003
-            rotationY += 0.005
+            // solo rotación horizontal (eje Y)
+            rotationY += 0.006 // velocidad ligeramente mayor para mejor visibilidad
 
             if (sphere) {
-                sphere.style.transform = `rotateX(${rotationX}rad) rotateY(${rotationY}rad)`
+                sphere.style.transform = `rotateY(${rotationY}rad)`
             }
 
             animationId = requestAnimationFrame(animate)

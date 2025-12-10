@@ -1,7 +1,51 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 const Hero = () => {
+    // Split name into words, then letters to prevent mid-word breaks
+    const animatedText = 'Cristopher Valladares'
+    const [waveActive, setWaveActive] = useState(false)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setWaveActive(true)
+            // remove shortly after to allow retrigger
+            setTimeout(() => setWaveActive(false), 700)
+        }, 5000)
+
+        return () => clearInterval(interval)
+    }, [])
+
+    // Create words -> letters structure so words can wrap but letters won't break
+    const words = animatedText.split(' ')
+    let letterCounter = 0
+    const wordSpans = words.map((word, wIdx) => {
+        const letters = word.split('').map((char) => {
+            const idx = letterCounter
+            letterCounter += 1
+            return (
+                <span
+                    key={idx}
+                    className="letter"
+                    style={{
+                        animationDelay: `${idx * 0.04}s`,
+                        // CSS custom property for staggered effects
+                        ['--letter-index']: idx
+                    }}
+                >
+                    {char}
+                </span>
+            )
+        })
+
+        return (
+            <span key={wIdx} className="word">
+                {letters}
+            </span>
+        )
+    })
+
     return (
         <section className="hero-section">
             <div className="container">
@@ -17,7 +61,7 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
                         >
-                            Hola, soy <span className="highlight">Cristopher Valladares</span>
+                            Hola, soy <span className={`highlight highlight-animated${waveActive ? ' wave-active' : ''}`}>{wordSpans}</span>
                         </motion.h1>
 
                         <motion.h2
