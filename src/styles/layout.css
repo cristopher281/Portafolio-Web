@@ -10,15 +10,16 @@
     width: 100%;
     z-index: var(--z-fixed);
     /* imagen de fondo con overlay oscuro para mantener contraste */
-    background: linear-gradient(rgba(10,10,15,0.75), rgba(10,10,15,0.75)),
-                url('/assets/images/4564a43e3a0113cb4cffe8fef56b3fc5.jpg') top center / cover no-repeat;
+    background: linear-gradient(rgba(10, 10, 15, 0.75), rgba(10, 10, 15, 0.75)),
+        url('/assets/images/4564a43e3a0113cb4cffe8fef56b3fc5.jpg') top center / cover no-repeat;
+    background-color: var(--dark-bg);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-base);
 }
 
 .header.scrolled {
-    background: rgba(10, 10, 15, 0.95);
+    background: var(--dark-bg);
     box-shadow: var(--shadow-lg);
 }
 
@@ -49,9 +50,9 @@
     justify-content: center;
     border-radius: 50%;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(0,255,247,0.06), rgba(0,0,0,0.04));
-    border: 2px solid rgba(0,255,247,0.12);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.6), 0 4px 10px rgba(0,255,247,0.06) inset;
+    background: linear-gradient(135deg, rgba(0, 255, 247, 0.06), rgba(0, 0, 0, 0.04));
+    border: 2px solid rgba(0, 255, 247, 0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 4px 10px rgba(0, 255, 247, 0.06) inset;
     transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -138,8 +139,8 @@
 /* === FOOTER === */
 .footer {
     /* imagen de fondo ubicada al fondo de la página con overlay para contraste */
-    background: linear-gradient(rgba(10,10,15,0.9), rgba(10,10,15,0.9)),
-                url('/assets/images/4564a43e3a0113cb4cffe8fef56b3fc5.jpg') bottom center / cover no-repeat;
+    background: linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.9)),
+        url('/assets/images/4564a43e3a0113cb4cffe8fef56b3fc5.jpg') bottom center / cover no-repeat;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: var(--spacing-xl) 0;
     margin-top: auto;
@@ -198,7 +199,7 @@
         top: 70px;
         left: 0;
         width: 100%;
-        background: rgba(10, 10, 15, 0.98);
+        background: var(--dark-bg);
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: var(--spacing-lg);
