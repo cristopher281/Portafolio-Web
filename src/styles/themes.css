@@ -1,0 +1,225 @@
+/* ============================================
+   THEMES - MULTIPLE COLOR PALETTES
+   ============================================ */
+
+/* Base transitions for smooth theme changes */
+:root {
+    --theme-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ============================================
+   THEME 1: CYBER CYAN (Default)
+   ============================================ */
+[data-theme="cyber-cyan"] {
+    /* Primary Colors */
+    --primary-cyan: #00fff7;
+    --primary-blue: #0ea5e9;
+    --accent-purple: #8b5cf6;
+    --accent-pink: #ec4899;
+
+    /* Backgrounds */
+    --dark-bg: #0a0a0f;
+    --dark-card: #13131a;
+    --dark-elevated: #1a1a24;
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --text-muted: #718096;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #00fff7 0%, #0ea5e9 100%);
+    --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    --gradient-dark: linear-gradient(180deg, #0a0a0f 0%, #1a1a24 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 20px rgba(0, 255, 247, 0.3);
+    --shadow-glow-lg: 0 0 40px rgba(0, 255, 247, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   THEME 2: BLOCKCHAIN DARK
+   ============================================ */
+[data-theme="blockchain"] {
+    /* Primary Colors */
+    --primary-cyan: #00ffff;
+    --primary-blue: #00d9ff;
+    --accent-purple: #4169e1;
+    --accent-pink: #00bfff;
+
+    /* Backgrounds */
+    --dark-bg: #050510;
+    --dark-card: #0a0a1a;
+    --dark-elevated: #0f0f20;
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #7dd3fc;
+    --text-muted: #4b5563;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #00ffff 0%, #00d9ff 100%);
+    --gradient-accent: linear-gradient(135deg, #4169e1 0%, #00bfff 100%);
+    --gradient-dark: linear-gradient(180deg, #050510 0%, #0f0f20 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 30px rgba(0, 255, 255, 0.5);
+    --shadow-glow-lg: 0 0 50px rgba(0, 255, 255, 0.6);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 255, 255, 0.2);
+}
+
+/* ============================================
+   THEME 3: EARTH TONES
+   ============================================ */
+[data-theme="earth"] {
+    /* Primary Colors */
+    --primary-cyan: #948578;
+    --primary-blue: #565449;
+    --accent-purple: #898e84;
+    --accent-pink: #b5a99a;
+
+    /* Backgrounds */
+    --dark-bg: #11120d;
+    --dark-card: #1f201a;
+    --dark-elevated: #2a2b24;
+
+    /* Text Colors */
+    --text-primary: #fffffb;
+    --text-secondary: #d8cfbc;
+    --text-muted: #898e84;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #948578 0%, #565449 100%);
+    --gradient-accent: linear-gradient(135deg, #898e84 0%, #b5a99a 100%);
+    --gradient-dark: linear-gradient(180deg, #11120d 0%, #2a2b24 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 20px rgba(148, 133, 120, 0.3);
+    --shadow-glow-lg: 0 0 40px rgba(148, 133, 120, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   THEME 4: MONOCHROME ELITE
+   ============================================ */
+[data-theme="monochrome"] {
+    /* Primary Colors */
+    --primary-cyan: #e5e5e5;
+    --primary-blue: #d4d4d4;
+    --accent-purple: #a3a3a3;
+    --accent-pink: #c7c7c7;
+
+    /* Backgrounds */
+    --dark-bg: #0f0f0f;
+    --dark-card: #1a1a1a;
+    --dark-elevated: #262626;
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #d4d4d4;
+    --text-muted: #737373;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #e5e5e5 0%, #d4d4d4 100%);
+    --gradient-accent: linear-gradient(135deg, #a3a3a3 0%, #c7c7c7 100%);
+    --gradient-dark: linear-gradient(180deg, #0f0f0f 0%, #262626 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 20px rgba(229, 229, 229, 0.2);
+    --shadow-glow-lg: 0 0 40px rgba(229, 229, 229, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* ============================================
+   THEME 5: GOLD ELEGANCE
+   ============================================ */
+[data-theme="gold"] {
+    /* Primary Colors */
+    --primary-cyan: #ffd700;
+    --primary-blue: #daa520;
+    --accent-purple: #b8860b;
+    --accent-pink: #ffdf00;
+
+    /* Backgrounds */
+    --dark-bg: #151515;
+    --dark-card: #202020;
+    --dark-elevated: #2a2a2a;
+
+    /* Text Colors */
+    --text-primary: #fffef7;
+    --text-secondary: #e8e8e8;
+    --text-muted: #999999;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+    --gradient-accent: linear-gradient(135deg, #b8860b 0%, #ffdf00 100%);
+    --gradient-dark: linear-gradient(180deg, #151515 0%, #2a2a2a 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 25px rgba(255, 215, 0, 0.3);
+    --shadow-glow-lg: 0 0 45px rgba(255, 215, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(255, 215, 0, 0.15);
+}
+
+/* ============================================
+   THEME 6: SUNSET PURPLE
+   ============================================ */
+[data-theme="sunset"] {
+    /* Primary Colors */
+    --primary-cyan: #d946ef;
+    --primary-blue: #a855f7;
+    --accent-purple: #7c3aed;
+    --accent-pink: #f472b6;
+
+    /* Backgrounds */
+    --dark-bg: #0d0a12;
+    --dark-card: #18141f;
+    --dark-elevated: #241d2e;
+
+    /* Text Colors */
+    --text-primary: #faf5ff;
+    --text-secondary: #e9d5ff;
+    --text-muted: #a78bfa;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #d946ef 0%, #a855f7 100%);
+    --gradient-accent: linear-gradient(135deg, #7c3aed 0%, #f472b6 100%);
+    --gradient-dark: linear-gradient(180deg, #0d0a12 0%, #241d2e 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 25px rgba(217, 70, 239, 0.4);
+    --shadow-glow-lg: 0 0 45px rgba(217, 70, 239, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(124, 58, 237, 0.3);
+}
+
+/* ============================================
+   DEFAULT THEME (Cyber Cyan)
+   ============================================ */
+:root:not([data-theme]) {
+    /* Apply Cyber Cyan as default */
+    --primary-cyan: #00fff7;
+    --primary-blue: #0ea5e9;
+    --accent-purple: #8b5cf6;
+    --accent-pink: #ec4899;
+
+    --dark-bg: #0a0a0f;
+    --dark-card: #13131a;
+    --dark-elevated: #1a1a24;
+
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --text-muted: #718096;
+
+    --gradient-primary: linear-gradient(135deg, #00fff7 0%, #0ea5e9 100%);
+    --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    --gradient-dark: linear-gradient(180deg, #0a0a0f 0%, #1a1a24 100%);
+
+    --shadow-glow: 0 0 20px rgba(0, 255, 247, 0.3);
+    --shadow-glow-lg: 0 0 40px rgba(0, 255, 247, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}

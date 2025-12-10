@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useNavigation } from '../hooks/useNavigation'
 import Logo3D from './Logo3D'
+import ThemeSelector from './ThemeSelector'
 
 const Header = () => {
     const location = useLocation()
@@ -60,6 +61,9 @@ const Header = () => {
                             </Link>
                         </motion.div>
                     </div>
+
+                    {/* Theme Selector */}
+                    <ThemeSelector />
 
                     <motion.button
                         className={`menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
