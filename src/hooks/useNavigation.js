@@ -21,6 +21,13 @@ export const useNavigation = () => {
         setIsMobileMenuOpen(false)
     }
 
+    // When mobile menu opens, prevent body scroll to avoid layout issues on mobile
+    useEffect(() => {
+        if (typeof document !== 'undefined') {
+            document.body.classList.toggle('menu-open', isMobileMenuOpen)
+        }
+    }, [isMobileMenuOpen])
+
     return {
         isScrolled,
         isMobileMenuOpen,

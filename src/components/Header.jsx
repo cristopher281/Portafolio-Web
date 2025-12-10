@@ -30,7 +30,11 @@ const Header = () => {
                         <span>CristopherV</span>
                     </Link>
 
-                    <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                    <div
+                        className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}
+                        role="menu"
+                        aria-hidden={!isMobileMenuOpen}
+                    >
                         {navLinks.map((link, index) => (
                             <motion.div
                                 key={link.path}
@@ -69,6 +73,7 @@ const Header = () => {
                         className={`menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
                         onClick={toggleMobileMenu}
                         aria-label="Toggle menu"
+                        aria-expanded={isMobileMenuOpen}
                         whileTap={{ scale: 0.9 }}
                     >
                         <span></span>

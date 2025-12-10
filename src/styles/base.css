@@ -104,6 +104,13 @@ body {
     min-height: 100vh;
 }
 
+/* Prevent background scroll when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 /* === TYPOGRAPHY === */
 h1,
 h2,
