@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useNavigation } from '../hooks/useNavigation'
+import Logo3D from './Logo3D'
 
 const Header = () => {
     const location = useLocation()
@@ -24,13 +25,7 @@ const Header = () => {
             <div className="container">
                 <nav className="nav">
                     <Link to="/" className="logo" onClick={closeMobileMenu}>
-                        <motion.div
-                            className="logo-icon"
-                            whileHover={{ scale: 1.08 }}
-                            transition={{ type: 'spring', stiffness: 300 }}
-                        >
-                            <img src="/assets/images/icon.jpg" alt="CristopherV" />
-                        </motion.div>
+                        <Logo3D />
                         <span>CristopherV</span>
                     </Link>
 
