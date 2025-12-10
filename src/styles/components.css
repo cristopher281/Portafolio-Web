@@ -328,7 +328,10 @@ textarea.form-control {
     justify-content: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
-    flex-wrap: wrap;
+    /* Show filters in a single row on small screens; allow horizontal scroll if needed */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .filter-btn {
