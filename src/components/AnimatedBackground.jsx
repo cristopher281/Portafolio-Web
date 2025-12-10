@@ -91,7 +91,7 @@ const AnimatedBackground = () => {
         }
 
         // Add grid overlay for some themes
-        if (['blockchain', 'monochrome', 'gold'].includes(theme)) {
+        if (['blockchain', 'monochrome', 'gold', 'pure-white', 'minimal-gray'].includes(theme)) {
             const gridOverlay = document.createElement('div')
             gridOverlay.className = `bg-grid bg-grid-${theme}`
             container.appendChild(gridOverlay)

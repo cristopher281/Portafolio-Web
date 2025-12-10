@@ -198,6 +198,99 @@
 }
 
 /* ============================================
+   THEME 7: PURE BLACK
+   ============================================ */
+[data-theme="pure-black"] {
+    /* Primary Colors */
+    --primary-cyan: #ffffff;
+    --primary-blue: #e0e0e0;
+    --accent-purple: #b0b0b0;
+    --accent-pink: #d0d0d0;
+
+    /* Backgrounds */
+    --dark-bg: #000000;
+    --dark-card: #0a0a0a;
+    --dark-elevated: #151515;
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #888888;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    --gradient-accent: linear-gradient(135deg, #b0b0b0 0%, #d0d0d0 100%);
+    --gradient-dark: linear-gradient(180deg, #000000 0%, #151515 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.15);
+    --shadow-glow-lg: 0 0 40px rgba(255, 255, 255, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   THEME 8: PURE WHITE
+   ============================================ */
+[data-theme="pure-white"] {
+    /* Primary Colors */
+    --primary-cyan: #000000;
+    --primary-blue: #333333;
+    --accent-purple: #555555;
+    --accent-pink: #222222;
+
+    /* Backgrounds */
+    --dark-bg: #ffffff;
+    --dark-card: #f8f8f8;
+    --dark-elevated: #f0f0f0;
+
+    /* Text Colors */
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-muted: #666666;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #000000 0%, #333333 100%);
+    --gradient-accent: linear-gradient(135deg, #555555 0%, #222222 100%);
+    --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 20px rgba(0, 0, 0, 0.1);
+    --shadow-glow-lg: 0 0 40px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   THEME 9: MINIMAL GRAY
+   ============================================ */
+[data-theme="minimal-gray"] {
+    /* Primary Colors */
+    --primary-cyan: #808080;
+    --primary-blue: #606060;
+    --accent-purple: #a0a0a0;
+    --accent-pink: #909090;
+
+    /* Backgrounds */
+    --dark-bg: #2a2a2a;
+    --dark-card: #353535;
+    --dark-elevated: #404040;
+
+    /* Text Colors */
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-muted: #808080;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #808080 0%, #606060 100%);
+    --gradient-accent: linear-gradient(135deg, #a0a0a0 0%, #909090 100%);
+    --gradient-dark: linear-gradient(180deg, #2a2a2a 0%, #404040 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 20px rgba(128, 128, 128, 0.2);
+    --shadow-glow-lg: 0 0 40px rgba(128, 128, 128, 0.25);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
    DEFAULT THEME (Cyber Cyan)
    ============================================ */
 :root:not([data-theme]) {

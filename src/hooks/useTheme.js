@@ -36,6 +36,21 @@ export const useTheme = () => {
             id: 'sunset',
             name: 'Sunset Purple',
             colors: ['#d946ef', '#a855f7', '#f472b6']
+        },
+        {
+            id: 'pure-black',
+            name: 'Pure Black',
+            colors: ['#000000', '#ffffff', '#808080']
+        },
+        {
+            id: 'pure-white',
+            name: 'Pure White',
+            colors: ['#ffffff', '#000000', '#666666']
+        },
+        {
+            id: 'minimal-gray',
+            name: 'Minimal Gray',
+            colors: ['#606060', '#a0a0a0', '#e0e0e0']
         }
     ]
 
