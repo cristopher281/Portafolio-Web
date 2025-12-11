@@ -14,27 +14,40 @@ const Projects = () => {
     const projects = [
         {
             id: 1,
-            icon: <i className="fas fa-robot"></i>,
-            title: 'Sistema de Acceso Automatizado con Reconocimiento Facial',
-            category: ['iot', 'automation'],
-            description: 'Sistema completo de control de acceso con Arduino, sensores y reconocimiento facial',
-            technologies: ['Arduino', 'Python', 'OpenCV', 'MySQL', 'React']
+            icon: <i className="fas fa-water"></i>,
+            title: 'Porton Utomatizado',
+            category: ['iot'],
+            image: '/assets/images/projects/Porton-ESP32.png',
+            description: 'Una solución moderna y accesible para controlar su portón desde cualquier lugar. Incluye sensores en tiempo real, apertura y cierre remoto, interfaz web intuitiva y máxima seguridad en cada operación. Ideal para hogares, negocios y propiedades que buscan comodidad, control y automatización sin costos elevados. Fácil de instalar, mantener y adaptar a cualquier tipo de portón.',
+            technologies: ['IoT', 'ESP32', 'Sensores', 'Dashboard', 'Automatización']
         },
         {
             id: 2,
             icon: <i className="fas fa-laptop-code"></i>,
-            title: 'Plataforma Web Full Stack',
+            title: 'Biblioteca UML – Catálogo de Recursos Académicos',
             category: ['web'],
-            description: 'Aplicación web completa con frontend en React y backend personalizado',
+            image: '/assets/Gemini_Generated_Image_6ic4td6ic4td6ic4.png',
+            description: 'Plataforma web que organiza y presenta una colección de enlaces académicos curados para facilitar investigación y estudio. Permite buscar, explorar y filtrar recursos educativos de forma rápida y accesible.',
             technologies: ['React', 'Node.js', 'MySQL', 'API REST']
         },
         {
             id: 3,
             icon: <i className="fas fa-microchip"></i>,
-            title: 'Prototipo IoT para Competencia Nacional',
+            title: 'AquaVisor – Plataforma IoT para Monitoreo de Caudal',
             category: ['iot', 'automation'],
-            description: 'Sistema IoT funcional desarrollado para competencia académica',
+            image: '/assets/AcuaVisor.png',
+            description: 'Solución avanzada para lectura, análisis y gestión de datos de caudal. Incluye arquitectura con almacenamiento dual, paneles interactivos y herramientas profesionales de informes en tiempo real.',
             technologies: ['Arduino', 'Sensores', 'IoT', 'Automatización']
+        }
+        ,
+        {
+            id: 4,
+            icon: <i className="fas fa-heartbeat"></i>,
+            title: 'Vital-IA — Asistente Online de Bienestar',
+            category: ['web', 'iot'],
+            image: '/assets/Vital.ia.png',
+            description: 'Plataforma web que ofrece asistencia online enfocada en salud integral: bienestar físico, emocional y mental. Combina una interfaz moderna con lógica robusta para brindar apoyo personalizado a usuarios.',
+            technologies: ['IA', 'Tyscript', 'React', 'N8n', 'Workflows']
         }
     ]
 
@@ -93,12 +106,12 @@ const Projects = () => {
                         ))}
                     </motion.div>
 
-                    {/* Grid de Proyectos - Estilo igual a Skills */}
-                    <div className="skills-grid">
+                    {/* Grid de Proyectos - uso de la grid específica */}
+                    <div className="projects-grid">
                         {filteredProjects.map((project, index) => (
                             <motion.div
                                 key={project.id}
-                                className="skill-category"
+                                className="skill-category project-card"
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 30 }}
@@ -109,6 +122,20 @@ const Projects = () => {
                                 }}
                                 data-category={project.category.join(' ')}
                             >
+                                {/* Imagen del proyecto (si existe) */}
+                                {project.image && (
+                                    <div className="project-image-wrapper">
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            onError={(e) => {
+                                                e.currentTarget.onerror = null
+                                                e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23202224%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23e6fff9%22 font-size=%2224%22>Imagen%20no%20disponible</text></svg>'
+                                            }}
+                                        />
+                                        {/* overlay removed to keep image clean */}
+                                    </div>
+                                )}
                                 <motion.h3
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
