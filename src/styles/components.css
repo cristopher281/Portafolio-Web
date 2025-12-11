@@ -46,17 +46,43 @@
    ============================================ */
 
 .btn-primary {
+    /* Base button styles */
+    --radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transform: translateY(0);
+
+    /* Primary button specific styles */
     background: linear-gradient(180deg, #00fff7 0%, #00d4cc 100%);
     color: #000000;
     font-weight: 700;
+    /* More moderate shadows to avoid large visual overflow */
     box-shadow:
-        /* Inner 3D depth */
-        inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.4),
-        inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.5),
-        inset 0 -0.4rem 0.9rem rgba(0, 255, 247, 0.6),
-        /* Outer glow */
-        0 3rem 3rem rgba(0, 255, 247, 0.2),
-        0 1rem 1rem -0.6rem rgba(0, 255, 247, 0.5);
+        inset 0 0.2rem 0.6rem rgba(255, 255, 255, 0.35),
+        inset 0 -0.08rem 0.2rem rgba(0, 0, 0, 0.45),
+        0 0.6rem 1.2rem rgba(0, 255, 247, 0.12),
+        0 0.3rem 0.6rem rgba(0, 255, 247, 0.18);
 }
 
 /* Top light reflection */
@@ -81,54 +107,55 @@
 .btn-primary::after {
     content: '';
     position: absolute;
-    left: -15%;
-    right: -15%;
-    bottom: 25%;
-    top: -100%;
+    left: -12%;
+    right: -12%;
+    bottom: -8%;
+    top: 55%;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 255, 247, 0.08);
     pointer-events: none;
     transition: all 0.3s ease;
 }
-
-.btn-primary:hover {
-    box-shadow:
-        inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.5),
-        inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.5),
-        inset 0 -0.4rem 0.9rem rgba(0, 255, 247, 0.8),
-        0 3rem 3rem rgba(0, 255, 247, 0.25),
-        0 1rem 1rem -0.6rem rgba(0, 255, 247, 0.6);
-}
-
-.btn-primary:hover::before {
-    opacity: 0.6;
-    transform: translateY(5%);
-}
-
-.btn-primary:hover::after {
-    transform: translateY(-5%);
-}
-
-.btn-primary:active {
-    transform: translateY(4px);
-    box-shadow:
-        inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.6),
-        inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
-        inset 0 -0.4rem 0.9rem rgba(0, 255, 247, 0.5),
-        0 3rem 3rem rgba(0, 255, 247, 0.2),
-        0 1rem 1rem -0.6rem rgba(0, 255, 247, 0.5);
-}
+/* Hover/active handled later with moderated values (below) */
 
 /* ============================================
-   SECONDARY BUTTON - Premium Glass
+    SECONDARY BUTTON - Premium Glass
    ============================================ */
 
 .btn-secondary {
+    /* Base button styles */
+    --radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transform: translateY(0);
+
+    /* Secondary button specific styles */
     background: linear-gradient(180deg,
             rgba(255, 255, 255, 0.15) 0%,
             rgba(255, 255, 255, 0.08) 100%);
-    backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
     color: #ffffff;
     box-shadow:
         /* Inner 3D depth */
@@ -136,8 +163,8 @@
         inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.6),
         inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.3),
         /* Outer effects */
-        0 3rem 3rem rgba(0, 0, 0, 0.3),
-        0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8),
+        0 0.9rem 1.8rem rgba(0, 0, 0, 0.3),
+        0 0.3rem 0.6rem -0.12rem rgba(0, 0, 0, 0.8),
         /* Cyan accent */
         0 0 0 1px rgba(0, 255, 247, 0.2);
 }
@@ -161,39 +188,33 @@
 }
 
 /* Bottom soft glow */
-.btn-secondary::after {
-    content: '';
-    position: absolute;
-    left: -15%;
-    right: -15%;
-    bottom: 25%;
-    top: -100%;
-    border-radius: 50%;
-    background: linear-gradient(180deg,
-            rgba(0, 255, 247, 0.1) 0%,
-            rgba(139, 92, 246, 0.1) 100%);
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
+.btn-primary:hover {
+    transform: translateY(-1px);
     box-shadow:
-        inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.3),
-        inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.6),
-        inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
-        0 3rem 3rem rgba(0, 255, 247, 0.15),
-        0 1rem 1rem -0.6rem rgba(0, 255, 247, 0.4),
-        0 0 0 1px rgba(0, 255, 247, 0.4);
+        inset 0 0.22rem 0.45rem rgba(255, 255, 255, 0.45),
+        inset 0 -0.06rem 0.18rem rgba(0, 0, 0, 0.52),
+        0 0.9rem 1.8rem rgba(0, 255, 247, 0.14);
 }
-
-.btn-secondary:hover::before {
+.btn-primary:hover::before {
     opacity: 0.5;
-    transform: translateY(5%);
+    transform: translateY(3%);
 }
 
-.btn-secondary:hover::after {
-    transform: translateY(-5%);
-    opacity: 1.2;
+.btn-primary:hover::after {
+    transform: translateY(-3%);
+}
+
+.btn-primary:active {
+    transform: translateY(0) scale(0.997);
+    box-shadow:
+        inset 0 0.18rem 0.4rem rgba(255, 255, 255, 0.45),
+        inset 0 -0.06rem 0.16rem rgba(0, 0, 0, 0.6),
+        0 0.4rem 0.8rem rgba(0, 255, 247, 0.1);
+}
+
+.btn-primary:focus-visible {
+    outline: 2px solid rgba(0, 255, 247, 0.45);
+    outline-offset: 3px;
 }
 
 .btn-secondary:active {
@@ -202,8 +223,13 @@
         inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.4),
         inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
         inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.3),
-        0 3rem 3rem rgba(0, 0, 0, 0.3),
-        0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+    0 0.9rem 1.8rem rgba(0, 0, 0, 0.3),
+    0 0.3rem 0.6rem -0.12rem rgba(0, 0, 0, 0.8);
+}
+
+.btn-secondary:focus-visible {
+    outline: 2px solid rgba(0, 255, 247, 0.5);
+    outline-offset: 3px;
 }
 
 /* ============================================
