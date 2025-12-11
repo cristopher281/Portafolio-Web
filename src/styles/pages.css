@@ -158,11 +158,12 @@
     bottom: 0;
     background: var(--gradient-primary);
     border-radius: 14px;
-    opacity: 0.06; /* much subtler */
+    opacity: 0.02; /* very subtle */
     /* Disable heavy morph/animation to avoid large moving glare */
     animation: none;
-    filter: blur(12px); /* reduced blur to avoid bleed */
+    filter: blur(8px); /* reduced blur to avoid bleed */
     pointer-events: none;
+    z-index: 0; /* ensure it stays behind image content */
 }
 
 /* Asegura tamaño y posicionamiento del wrapper de la imagen en escritorio */
@@ -183,7 +184,7 @@
     border: 3px solid rgba(0, 255, 247, 0.3);
     transition: var(--transition-base);
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-image img:hover {
@@ -403,17 +404,18 @@
 
     .hero-buttons {
         /* On small screens show buttons inline but allow wrapping when needed */
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
         gap: var(--spacing-sm);
+        align-items: stretch;
     }
 
     .hero-buttons .btn-primary,
     .hero-buttons .btn-secondary {
-        width: auto;
-        padding: calc(var(--spacing-sm) + 2px) var(--spacing-lg);
+        width: 100%;
+        padding: calc(var(--spacing-sm) + 6px) var(--spacing-lg);
         font-size: var(--font-size-base);
-        min-height: 44px;
+        min-height: 48px;
         /* Minimum touch target size */
     }
 
