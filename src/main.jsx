@@ -7,7 +7,6 @@ import './styles/themes.css'
 import './styles/components.css'
 import './styles/layout.css'
 import './styles/pages.css'
-import './styles/carousel-3d.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
