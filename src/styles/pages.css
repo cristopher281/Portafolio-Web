@@ -46,44 +46,13 @@
     flex-wrap: wrap;
 }
 
-.hero-text h1 {
-    font-size: var(--font-size-6xl);
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: var(--spacing-md);
+/* Arrows removed: kept CSS commented out for reference
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
-
-.hero-text .highlight {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: var(--spacing-xl);
-    display: inline-block;
-}
-
-/* Professional letter-by-letter animation */
-.highlight-animated {
-    /* allow wrapping between words but not inside words */
-    display: inline-block;
-}
-
-.highlight-animated .word {
-    display: inline-block; /* keep letters of a word together */
-    white-space: nowrap;
-    margin-right: 0.3ch;
-}
-
-.highlight-animated .letter {
-    display: inline-block;
-    opacity: 0;
-    transform-origin: center bottom;
-    animation: letterIn 0.6s cubic-bezier(.2,.9,.3,1) forwards;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+*/
 
 /* Individual letter fade-in animation */
 @keyframes letterFadeIn {
@@ -109,11 +78,13 @@
         transform: translateY(18px) rotateX(15deg) scale(0.95);
         filter: blur(2px);
     }
+
     60% {
         opacity: 1;
         transform: translateY(-6px) rotateX(0deg) scale(1.02);
         filter: blur(0);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) rotateX(0deg) scale(1);
@@ -123,22 +94,24 @@
 
 /* Subtle periodic glint + pop animation every 5s */
 .highlight-animated.wave-active .letter {
-    animation: pop 0.6s cubic-bezier(.2,.9,.3,1);
+    animation: pop 0.6s cubic-bezier(.2, .9, .3, 1);
     animation-delay: calc(var(--letter-index, 0) * 0.03s);
 }
 
 @keyframes pop {
     0% {
         transform: translateY(0) scale(1);
-        filter: brightness(1) saturate(1) drop-shadow(0 0 0 rgba(0,0,0,0));
+        filter: brightness(1) saturate(1) drop-shadow(0 0 0 rgba(0, 0, 0, 0));
     }
+
     40% {
         transform: translateY(-10px) scale(1.06);
-        filter: brightness(1.25) saturate(1.1) drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+        filter: brightness(1.25) saturate(1.1) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.25));
     }
+
     100% {
         transform: translateY(0) scale(1);
-        filter: brightness(1) saturate(1) drop-shadow(0 0 0 rgba(0,0,0,0));
+        filter: brightness(1) saturate(1) drop-shadow(0 0 0 rgba(0, 0, 0, 0));
     }
 }
 
@@ -158,12 +131,15 @@
     bottom: 0;
     background: var(--gradient-primary);
     border-radius: 14px;
-    opacity: 0.02; /* very subtle */
+    opacity: 0.02;
+    /* very subtle */
     /* Disable heavy morph/animation to avoid large moving glare */
     animation: none;
-    filter: blur(8px); /* reduced blur to avoid bleed */
+    filter: blur(8px);
+    /* reduced blur to avoid bleed */
     pointer-events: none;
-    z-index: 0; /* ensure it stays behind image content */
+    z-index: 0;
+    /* ensure it stays behind image content */
 }
 
 /* Asegura tamaño y posicionamiento del wrapper de la imagen en escritorio */
@@ -285,11 +261,169 @@
 }
 
 /* === PROJECTS PAGE === */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: var(--spacing-xl);
+.projects-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: var(--spacing-xl);
+    perspective: 2000px;
+    perspective-origin: center;
 }
+
+/* Side fade overlays to soften carousel edges and avoid harsh cutoffs */
+.projects-carousel-wrapper::before,
+.projects-carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 110px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.projects-carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg) 0%, rgba(0, 0, 0, 0.0) 60%);
+}
+
+.projects-carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--bg) 0%, rgba(0, 0, 0, 0.0) 60%);
+}
+
+.projects-carousel-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    scroll-behavior: smooth;
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    -webkit-overflow-scrolling: touch;
+}
+
+.projects-carousel-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.projects-carousel-track {
+    display: flex;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-md) 0;
+    width: max-content;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+}
+
+/* Carousel Cards - Base Layout Only */
+/* NOTE: All 3D effects, hover states, active states, and pseudo-elements (::before, ::after)
+   for .carousel-card are defined in carousel-3d.css to avoid duplication and CSS conflicts */
+.carousel-card {
+    min-width: 380px;
+    max-width: 380px;
+    flex-shrink: 0;
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 255, 247, 0.06);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0, 255, 247, 0.12);
+    color: var(--primary-cyan);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+    pointer-events: auto;
+    transition: var(--transition-base);
+    opacity: 0.6;
+}
+
+.carousel-arrow:hover {
+    background: rgba(0, 255, 247, 0.2);
+    border-color: var(--primary-cyan);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 255, 247, 0.3);
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow-left {
+    left: 18px;
+}
+
+.carousel-arrow-right {
+    right: 18px;
+}
+
+/* Make arrows subtle and only clearly visible on hover */
+.projects-carousel-wrapper:hover .carousel-arrow {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.02);
+}
+
+/* Ensure carousel track doesn't cover arrows (transforms can create stacking contexts) */
+.projects-carousel-track {
+    z-index: 1;
+}
+
+/* Hide arrows on mobile */
+@media (max-width: 768px) {
+    .carousel-arrow {
+        display: none;
+    }
+}
+
+/* Mobile: make cards appear to come from beyond the screen edge and enable snap */
+@media (max-width: 900px) {
+
+    .projects-carousel-wrapper::before,
+    .projects-carousel-wrapper::after {
+        width: 14vw;
+        /* wider fade on small screens */
+    }
+
+    .projects-carousel-container {
+        padding: 0 12vw;
+        /* cards start inset from edges creating the 'emerge' effect */
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .projects-carousel-track {
+        gap: var(--spacing-md);
+    }
+
+    .carousel-card {
+        /* Make each card occupy most of the viewport but leave room for peeking */
+        min-width: calc(100% - 24vw);
+        max-width: calc(100% - 24vw);
+        scroll-snap-align: center;
+    }
+
+    .project-image-wrapper {
+        height: 200px;
+    }
+
+    .card-click-hint {
+        bottom: 12px;
+    }
+}
+
 
 /* Estilos para las tarjetas de proyecto con imagen */
 .project-card {
@@ -298,14 +432,15 @@
     overflow: hidden;
 }
 
+/* Base styles for project image wrapper (carousel-specific styles in carousel-3d.css) */
 .project-image-wrapper {
     width: 100%;
     height: 260px;
     overflow: hidden;
     border-radius: var(--radius-md);
     margin-bottom: var(--spacing-md);
-    background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.12));
-    border: 1px solid rgba(255,255,255,0.02);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.12));
+    border: 1px solid rgba(255, 255, 255, 0.02);
     position: relative;
 }
 
@@ -314,12 +449,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.project-image-wrapper img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.02);
 }
 
 /* Overlay badges on image */
@@ -401,8 +530,9 @@
         height: 250px;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .carousel-card {
+        min-width: 300px;
+        max-width: 300px;
     }
 
     .skills-grid {
@@ -455,6 +585,11 @@
 
     .section {
         padding: var(--spacing-2xl) 0;
+    }
+
+    .carousel-card {
+        min-width: 280px;
+        max-width: 280px;
     }
 }
 

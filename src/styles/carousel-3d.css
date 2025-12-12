@@ -1,0 +1,345 @@
+/* ============================================
+   3D CAROUSEL EFFECTS
+   ============================================ */
+
+/* 3D Perspective Container */
+.projects-carousel-wrapper {
+    perspective: 2000px;
+    perspective-origin: center;
+}
+
+.projects-carousel-container {
+    /* avoid preserve-3d here to reduce repaint/jank during scroll */
+}
+
+.projects-carousel-track {
+    /* keep simple transform promotion only */
+    transform: translateZ(0);
+}
+
+/* 3D Card Effects - Base Styles */
+.carousel-card {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.06));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: 0 6px 18px rgba(5, 10, 15, 0.26);
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 260ms ease;
+    cursor: pointer;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.carousel-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(0, 255, 247, 0.05) 0%,
+            rgba(255, 215, 0, 0.05) 100%);
+    border-radius: var(--radius-lg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel-card:hover::before {
+    opacity: 1;
+}
+
+/* 3D Hover Effect */
+.carousel-card:hover {
+    /* reduced 3D depth to avoid heavy compositing during scroll */
+    transform: translateY(-10px) translateZ(20px) rotateX(2deg) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 255, 247, 0.18);
+    border-color: rgba(0, 255, 247, 0.28);
+}
+
+/* Active/Clicked State */
+.carousel-card.active {
+    transform: translateY(-16px) translateZ(36px) scale(1.03);
+    box-shadow: 0 30px 60px rgba(0, 255, 247, 0.22);
+    z-index: 60;
+}
+
+/* Shine Effect on Hover */
+.carousel-card::after {
+    /* subtle shine removed to reduce repaints */
+    content: '';
+    display: none;
+}
+
+/* 3D Image Effects in Carousel */
+.carousel-card .project-image-wrapper {
+    will-change: transform;
+    transition: transform 300ms cubic-bezier(.2, .8, .2, 1), box-shadow 240ms ease;
+    box-shadow: 0 6px 20px rgba(2, 6, 10, 0.18) inset;
+}
+
+.carousel-card .project-image-wrapper img {
+    transform: none; /* avoid 3D translation unless hovered */
+    border-radius: calc(var(--radius-md) - 2px);
+    transition: transform 360ms ease, filter 360ms ease;
+}
+
+.carousel-card:hover .project-image-wrapper img {
+    transform: translateZ(14px) scale(1.03);
+    filter: brightness(1.01);
+}
+
+/* ============================================
+   MODAL/EXPANDED CARD VIEW
+   ============================================ */
+
+.card-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: var(--spacing-xl);
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.card-modal-content {
+    background: rgba(16, 16, 28, 0.95);
+    border: 1px solid rgba(0, 255, 247, 0.3);
+    border-radius: var(--radius-xl);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow:
+        0 50px 100px rgba(0, 255, 247, 0.3),
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: scale(0.9) translateY(30px);
+    opacity: 0;
+    animation: slideUp 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+@keyframes slideUp {
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.card-modal-close {
+    position: sticky;
+    top: var(--spacing-md);
+    left: 100%;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 255, 247, 0.1);
+    border: 1px solid rgba(0, 255, 247, 0.3);
+    border-radius: 50%;
+    color: var(--primary-cyan);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    margin-bottom: calc(-40px - var(--spacing-md));
+    margin-right: var(--spacing-md);
+}
+
+.card-modal-close:hover {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: #ff4444;
+    color: #ff4444;
+    transform: rotate(90deg) scale(1.1);
+}
+
+.card-modal-body {
+    padding: var(--spacing-2xl);
+}
+
+/* Modal Image */
+.modal-project-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-xl);
+    border: 2px solid rgba(0, 255, 247, 0.2);
+}
+
+/* Modal Content */
+.modal-project-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.modal-project-icon {
+    font-size: var(--font-size-4xl);
+    color: var(--primary-cyan);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-project-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.modal-project-description {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    text-align: justify;
+}
+
+.modal-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xl);
+}
+
+.modal-tech-tag {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(0, 255, 247, 0.1);
+    border: 1px solid rgba(0, 255, 247, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--primary-cyan);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal-tech-tag:hover {
+    background: rgba(0, 255, 247, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 247, 0.3);
+}
+
+/* Scrollbar for modal */
+.card-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card-modal-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.card-modal-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 247, 0.3);
+    border-radius: 4px;
+}
+
+.card-modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 247, 0.5);
+}
+
+/* ============================================
+   RESPONSIVE 3D EFFECTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .carousel-card:hover {
+        transform: translateY(-10px) translateZ(30px) scale(1.02);
+    }
+
+    .card-modal-content {
+        max-height: 95vh;
+        margin: var(--spacing-md);
+    }
+
+    .card-modal-body {
+        padding: var(--spacing-xl);
+    }
+
+    .modal-project-image {
+        height: 250px;
+    }
+
+    .modal-project-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .modal-project-description {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-card:hover {
+        transform: translateY(-8px) translateZ(20px) scale(1.01);
+    }
+
+    .card-modal-overlay {
+        padding: var(--spacing-sm);
+    }
+
+    .card-modal-body {
+        padding: var(--spacing-lg);
+    }
+
+    .modal-project-image {
+        height: 200px;
+    }
+
+    .modal-project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Active/Click State - Refine the transform for click feedback */
+.carousel-card:active {
+    transform: translateY(-12px) translateZ(40px) scale(0.98);
+}
+
+/* Hint text for users */
+.card-click-hint {
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    background: rgba(0, 255, 247, 0.15);
+    border: 1px solid rgba(0, 255, 247, 0.3);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--primary-cyan);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.carousel-card:hover .card-click-hint {
+    opacity: 1;
+}
