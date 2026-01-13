@@ -115,13 +115,15 @@ const Hero = () => {
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
                     >
                         <motion.div
-                            className="hero-image-wrapper"
-                            whileHover={{ scale: 1.05 }}
+                            className="hero-video-wrapper"
+                            whileHover={{ scale: 1.02 }}
                             transition={{ type: 'spring', stiffness: 300 }}
                         >
+                            <div className="hero-video-glow"></div>
                             <motion.img
-                                src="/foto-perfil.jpg"
-                                alt="Cristopher Valladares - Desarrollador Web Frontend"
+                                src="https://vmchtsktrlkminhbiosx.supabase.co/storage/v1/object/sign/portafolio-web/video%20para%20portafolio.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zZTk3OWU5OC0zN2QzLTQyYmYtOTRiMy1kNTRlNjlmYjZlYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwb3J0YWZvbGlvLXdlYi92aWRlbyBwYXJhIHBvcnRhZm9saW8ud2VicCIsImlhdCI6MTc2ODE4NDExOSwiZXhwIjoxNzcwNzc2MTE5fQ.iiSYv-hBOkCUgXWOdUbeqVxRIO9GJGk-xTFbH-GUA2Q"
+                                alt="Cristopher Valladares - Portfolio Video"
+                                className="hero-video-content"
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: 0.5, duration: 0.8 }}
